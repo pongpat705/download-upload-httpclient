@@ -18,17 +18,21 @@ import th.co.prior.training.file.model.*;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
 public class FileService {
     private ToolUtilsComponent toolsComponent;
     private SaleTransactionAdapter saleTransactionAdapter;
+    private Map<String, String> maoBean;
 
     public FileService(ToolUtilsComponent toolsComponent
-            , @Qualifier("saleTransactionAdaptorImpl") SaleTransactionAdapter saleTransactionAdapter) {
+            , @Qualifier("saleTransactionAdaptorImpl") SaleTransactionAdapter saleTransactionAdapter
+            , @Qualifier("maoBean")Map<String, String> maoBean) {
         this.toolsComponent = toolsComponent;
         this.saleTransactionAdapter = saleTransactionAdapter;
+        this.maoBean = maoBean;
     }
 
     public ResponseModel<Void> keepFileToLocalPath(FileUploadModel fileUploadModel) {

@@ -1,0 +1,7 @@
+app:
+  config:
+    adapter:
+      sale-transaction: 'http://localhost:9091/api/v1/salesTransactions'
+      inquiry-balance: 'http://localhost:9091/api/v1/inquiryBalance'
+  kafka:
+    topic: 'xxxxx'
